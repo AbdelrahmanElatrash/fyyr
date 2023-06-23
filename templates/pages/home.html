@@ -1,11 +1,33 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}Home page{% endblock title %}
+{% block title %}fyyur/home{% endblock title %}
 
 {% block content %}
-<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+<!-- <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
   <img src="{% static 'images/logo.png' %}" class="img-fluid" alt="DjangoX logo"/>
   <p class="lead">A Django starter project with batteries.</p>
+</div> -->
+
+<div class="row">
+	<div class="col-sm-6">
+    <h1>Fyyur 🔥</h1>
+    <p class="lead">Where musical artists meet musical venues.</p>
+    <h3>
+			<a href="/venues"><button class="btn btn-primary btn-lg">Find a venue</button></a>
+			<a href="{% url 'create_venue' %}"><button class="btn btn-default btn-lg">Post a venue</button></a>
+		</h3>
+		<h3>
+			<a href="/artists"><button class="btn btn-primary btn-lg">Find an artist</button></a>
+			<a href="{% url 'create_artist' %}"><button class="btn btn-default btn-lg">Post an artist</button></a>
+		</h3>
+    <p class="lead">Publicize about your show for free.</p>
+    <h3>
+			<a href="{% url 'create_show' %}"><button class="btn btn-default btn-lg">Post a show</button></a>
+		</h3>
+  </div>
+  <div class="col-sm-6 hidden-sm hidden-xs">
+		<img id="front-splash" class="img-fluid" src="{% static 'images/front-splash.jpg' %}" alt="Front Photo of Musical Band" />
+	</div>
 </div>
 {% endblock content %}

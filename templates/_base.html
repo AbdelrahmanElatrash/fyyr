@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <title>{% block title %}DjangoX{% endblock title %}</title>
+  <title>{% block title %}Fyyur{% endblock title %}</title>
   <meta name="description" content="A framework for launching new Django projects quickly.">
   <meta name="author" content="">
   <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.ico' %}">
@@ -31,7 +31,11 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">🔥</a></li>
+          <li><a href="{% url 'venue_list' %}" class="nav-link px-2 link-dark">Venues</a></li>
+          <li><a href="{% url 'artist_list' %}" class="nav-link px-2 link-dark">artists</a></li>
+          <li><a href="{% url 'show_list' %}" class="nav-link px-2 link-dark">shows</a></li>
+          
           <li><a href="{% url 'about' %}" class="nav-link px-2 link-dark">About</a></li>
         </ul>
 
@@ -66,9 +70,15 @@
   </div>
 
   <footer class="footer">
-    <div class="container">
+    <!-- <div class="container">
       <span class="text-muted">Footer...</span>
+    </div> -->
+    <div id="footer">
+    <div class="container">
+      <p>Fyyur &copy; All Rights Reserved.</p>
+      {% block footer %}{% endblock %}
     </div>
+  </div>
   </footer>
 
   {% block javascript %}

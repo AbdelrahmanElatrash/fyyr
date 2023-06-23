@@ -1,0 +1,10 @@
+{% extends '_base.html'%}
+
+{% block title %}fyyur/Artist{% endblock %}
+
+{% block content %}
+    
+    {% for artist in artists %} 
+        <h3><a href="{% url 'artist_detail' artist.pk %}">{{artist.name}}</a></h3>
+    {% endfor %}
+{% endblock content %}

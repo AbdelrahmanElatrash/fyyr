@@ -1,0 +1,14 @@
+{% extends '_base.html'%}
+
+{% block title %}fyyur/create venue{% endblock %}
+
+{% block content %}
+    
+<h1>Create a new venue </h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" />
+</form>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends '_base.html'%}
+
+{% block title %}fyyur/Venue{% endblock %}
+
+{% block content %}
+    
+
+    <!-- {% for city in venues.unique_cities %}
+        <h1>{{ city.city}}</h1>
+        {% for venue in venues %}
+            {% if venue.city == city.city %}
+                <h3>{{venue.name}}</h3>
+            {% endif %}
+        {% endfor %}
+    {% endfor %} -->
+
+    {% for venue in venues %} 
+
+        <h3><a href="{% url 'venue_detail' venue.pk %}">{{venue.name}}</a></h3>
+
+    {% endfor %}
+{% endblock content %}

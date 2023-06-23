@@ -1,0 +1,56 @@
+{% extends '_base.html'%}
+
+{% block title %}fyyur/venue detail{% endblock %}
+
+{% block content %}
+    
+<div class="row">
+
+    <div class="col-sm-6">
+        <h1 class="monospace">
+			{{ venue.name }}
+		</h1>
+
+        <div class="genres">
+			{% for genre in venue.genres %}
+			<span class="genre">{{ genre }}</span>
+			{% endfor %}
+		</div>
+
+        <p>
+			<i class="fas fa-globe-americas">{{ venue.city }}</i> 
+		</p>
+        <p>
+			<i class="fas fa-map-marker"></i> {% if venue.address %}{{ venue.address }}{% else %}No Address{% endif %}
+		</p>
+		<p>
+			<i class="fas fa-phone-alt"></i> {% if venue.phone %}{{ venue.phone }}{% else %}No Phone{% endif %}
+		</p>
+        <p>
+			<i class="fab fa-facebook-f"></i> {% if venue.facebook_link %}<a href="{{ venue.facebook_link }}" target="_blank">{{ venue.facebook_link }}</a>{% else %}No Facebook Link{% endif %}
+		</p>
+
+        {% if venue.seeking_talent %}
+		<div class="seeking">
+			<p class="lead">Currently seeking talent</p>
+			<div class="description">
+				<i class="fas fa-quote-left"></i> {{ venue.seeking_description }} <i class="fas fa-quote-right"></i>
+			</div>
+		</div>
+		{% else %}	
+		<p class="not-seeking">
+			<i class="fas fa-moon"></i> Not currently seeking talent
+		</p>
+		{% endif %}
+
+        <div class="col-sm-6">
+            <img src="{{ venue.img_link }}" alt="Venue Image" />
+        </div>
+    </div>
+</div>
+<div>
+    <button><a href="{% url 'update_venue' venue.pk%}">Update</a></button>
+    <button><a href="{% url 'delete_venue' venue.pk%}">Delete</a></button>
+</div>
+
+{% endblock content %}
