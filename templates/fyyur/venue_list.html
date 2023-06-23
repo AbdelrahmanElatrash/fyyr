@@ -16,7 +16,10 @@
 
     {% for venue in venues %} 
 
-        <h3><a href="{% url 'venue_detail' venue.pk %}">{{venue.name}}</a></h3>
+        <h3><a href="{% url 'venue_detail' venue.pk %}"><i class="fas fa-music"></i>
+            <div class="item">
+                <h5>{{ venue.name }}</h5>
+            </div></a></h3>
 
     {% endfor %}
 {% endblock content %}
