@@ -66,23 +66,24 @@
     </div>
   </header>
 
-  <div class="container">
+  <div id="content" class="container">
     {% block content %}
     <p>Default content...</p>
     {% endblock content %}
   </div>
 
-  <footer class="footer">
-    <!-- <div class="container">
+  <!-- <footer class="footer">
+    <div class="container">
       <span class="text-muted">Footer...</span>
-    </div> -->
-    <div id="footer">
+    </div>
+    
+  </footer> -->
+  <!-- <div id="footer">
     <div class="container">
       <p>Fyyur &copy; All Rights Reserved.</p>
       {% block footer %}{% endblock %}
     </div>
-  </div>
-  </footer>
+  </div> -->
 
   {% block javascript %}
   <!-- Bootstrap JavaScript -->
