@@ -15,13 +15,21 @@ class VenueListView(ListView):
     template_name='fyyur/venue_list.html'
     model = Venue
     context_object_name='venues'
-
+    # paginate_by = 10
+    queryset = Venue.objects.all()
+    for venue in queryset:
+        if venue:
+            print(venue)
+    
+   
 
     
 
 class VenueDetailView(DetailView):
     template_name='fyyur/venue_detail.html'
     model=Venue
+    
+
     
 
 class VenueCreateView(CreateView):
@@ -73,7 +81,13 @@ class ShowListView(ListView):
     template_name='fyyur/show_list.html'
     model=Show
     context_object_name='shows'
-    
+    queryset=Show.objects.all()
+
+    for show in queryset:
+        print(show.start_time)
+        print(show.venue_id,show.venue.name )
+        print(show.admin)
+        
 
 class ShowCreateView(CreateView):
     template_name='fyyur/create_show.html'

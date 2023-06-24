@@ -6,7 +6,8 @@
     
 <div class="row shows">
     {%for show in shows %}
-    <   h4>{{ show.start_time }}</h4>
+    <h4>{{ show.start_time }}</h4>
+    <p>{{show.venue_name}}</p>
     
     {% endfor %}
 </div>
